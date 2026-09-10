@@ -1,0 +1,27 @@
+[project]
+name = "demarc-graph"
+version = "0.1.0"
+description = "Boundary Disputes in the Early Roman Empire"
+readme = "README.md"
+authors = [
+    { name = "Tom Elliott", email = "ipse@paregorios.org" }
+]
+requires-python = ">=3.14"
+dependencies = [
+    "lxml>=6.1.3",
+    "rdflib>=7.6.0",
+]
+
+[project.scripts]
+demarc-graph = "demarc_graph:main"
+
+[build-system]
+requires = ["uv_build>=0.12.9,<0.13.0"]
+build-backend = "uv_build"
+
+[dependency-groups]
+dev = [
+    "black>=26.5.1",
+    "jupyter>=1.1.1",
+    "pytest>=9.1.1",
+]
