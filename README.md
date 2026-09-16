@@ -1,6 +1,8 @@
 # Extract RDF from my dissertation XML (which was built with MSWord)
 
-As of 16 September 2026:
+FYI: notebooks in notebooks directory are not up-to-date; used as scratch/experimentation. 
+
+As of 16 September 2026, the latest working code in the package does this:
 ```
 ⌘ python scripts/generate.py
 @prefix demarc: <https://paregorios.org/demarc/> .
