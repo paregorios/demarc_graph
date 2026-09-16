@@ -2,7 +2,8 @@
 
 FYI: notebooks in notebooks directory are not up-to-date; used as scratch/experimentation. 
 
-As of 16 September 2026, the latest working code in the package does this:
+As of 16 September 2026, the latest working code in the package does this by parsing the original XML and constructing triples, which are then serialized to TTL using rdflib:
+
 ```
 ⌘ python scripts/generate.py
 @prefix demarc: <https://paregorios.org/demarc/> .
