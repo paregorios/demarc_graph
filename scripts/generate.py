@@ -60,7 +60,10 @@ def main(**kwargs):
     instances = e.extract_instances()
     g = Graph()
     for instance in instances.values():
-        g.add(instance.label_rdf)
+        logger.debug(f"instance id {instance.id}")
+
+        for label_triple in instance.labels_rdf:
+            g.add(label_triple)
     g.bind("demarc", NS_DEMARC)
     print(g.serialize(format="turtle"))
     sys.exit(EXIT_SUCCESS)  # if error, sys.exit(EXIT_ERROR)

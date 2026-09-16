@@ -90,7 +90,7 @@ class Extractor:
                         ]
                     )
                     if label:
-                        instance.label = label
+                        instance.add_label(label)
                     else:
                         raise RuntimeError(
                             f"Failed to extract a label for instance {instance_id}"
