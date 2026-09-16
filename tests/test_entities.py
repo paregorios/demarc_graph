@@ -5,7 +5,7 @@
 # Licensed under the AGPL-3.0; see LICENSE.txt file.
 #
 from demarc_graph.entities import Entity, Label
-from demarc_graph.rdf import NS_RDFS
+from demarc_graph.rdf import NS_RDFS, NS_DEMARC
 import logging
 from pytest import raises
 from rdflib import URIRef, Literal
@@ -35,22 +35,22 @@ class TestLabel:
 
 class TestEntity:
     def test_init(self):
-        e = Entity("https://example.com/8675309")
+        e = Entity("https://example.com/8675309", type=NS_DEMARC["Entity"])
         assert e.id == "https://example.com/8675309"
 
     def test_id_bad(self):
         with raises(ValueError):
-            Entity("8675309")
+            Entity("8675309", type=NS_DEMARC["Entity"])
 
     def test_label(self):
-        e = Entity("https://example.com/8675309")
+        e = Entity("https://example.com/8675309", type=NS_DEMARC["Entity"])
         assert e.labels == []
         e.add_label("Jenni")
         assert len(e.labels) == 1
         assert e.labels[0] == "Jenni"
 
     def test_labels(self):
-        e = Entity("https://example.com/8675309")
+        e = Entity("https://example.com/8675309", type=NS_DEMARC["Entity"])
         e.add_label("Jenni")
         e.add_label("Henri", "fr")
         assert len(e.labels) == 2

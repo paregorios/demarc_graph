@@ -27,4 +27,4 @@ class TestExtractor:
         self.logger.debug(f"extracted {len(instances)} instances")
         assert len(instances) == 106
         for iid, instance in instances.items():
-            self.logger.debug(f"{iid}: {instance.label}")
+            self.logger.debug(f"{iid}: {instance.labels[0]}")
