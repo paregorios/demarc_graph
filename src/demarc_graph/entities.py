@@ -9,11 +9,61 @@
 Define entity base class
 """
 
-from rdflib import URIRef, Literal
+from language_tags import tags
+import logging
+from pprint import pformat
+from rdflib import URIRef, Literal, Graph
 from .rdf import *
 from .text import norm
-from typing import Tuple
+from typing import List, Tuple
 from validators import url as valid_uri
+
+
+class Label:
+    """
+    Base class for an RDFS label
+    """
+
+    def __init__(self, value: str, lang: str = "en"):
+        self._value = ""
+        self._lang = ""
+        self.value = value
+        self.lang = lang
+
+    def __str__(self):
+        return self._value
+
+    @property
+    def value(self):
+        return self._value
+
+    @value.setter
+    def value(self, val: str):
+        clean_value = norm(val)
+        if not clean_value:
+            raise ValueError(
+                f"Label cannot be zero length string after whitespace normalization. Original value: '{val}'"
+            )
+        self._value = clean_value
+
+    @property
+    def lang(self):
+        return self._lang
+
+    @lang.setter
+    def lang(self, value: str):
+        logger = logging.getLogger("Label::lang.setter")
+        clean_value = norm(value)
+        if tags.check(clean_value):
+            self._lang = clean_value
+        else:
+            raise ValueError(
+                f"Invalid lang tag {clean_value}: {"; ".join([err.message.strip() for err in tags.tag(value).errors if err.message.strip()])}"
+            )
+
+    def rdf(self) -> Tuple[URIRef, Literal]:
+        """returns predicate and object, but label doesn't know the ID"""
+        return (NS_RDFS.label, Literal(self.value, lang=self.lang))
 
 
 class Entity:
@@ -24,7 +74,7 @@ class Entity:
     def __init__(self, id: str):
         self._id = ""
         self.id = id
-        self._label = ""
+        self._labels = dict()  # by language tag
 
     @property
     def id(self) -> str:
@@ -38,18 +88,49 @@ class Entity:
             raise ValueError(f"entity ID must be an HTTPs URI, but '{value}' is not.")
 
     @property
-    def label(self) -> str:
-        return self._label
+    def labels(self) -> list:
+        result = set()
+        for some_labels in self._labels.values():
+            result.update([label.value for label in some_labels])
+        return list(result)
 
-    @label.setter
-    def label(self, value: str):
-        self._label = norm(value)
+    def add_label(self, value: str, lang: str = "en"):
+        label = Label(value, lang)
+        try:
+            self._labels[lang]
+        except KeyError:
+            self._labels[lang] = []
+        self._labels[lang].append(label)
 
-    @label.deleter
-    def label(self):
-        self._label = ""
+    def get_labels(self, lang: str = "") -> list:
+        results = list()
+        if not lang:
+            for lang_key, labels in self._labels.items():
+                results.extend([l.value for l in labels])
+            return results
+
+        if not tags.check(lang):
+            raise ValueError(
+                f"Invalid lang tag {lang}: {"; ".join(tags.tag(lang).errors)}"
+            )
+        try:
+            labels = self._labels[lang]
+        except KeyError:
+            return []
+        return [l.value for l in labels]
 
     @property
-    def label_rdf(self) -> Tuple[URIRef, URIRef, Literal]:
-        """serialize label as an RDF triple"""
-        return (URIRef(self.id), NS_RDFS.label, Literal(self.label))
+    def labels_rdf(self) -> List[Tuple[URIRef, URIRef, Literal]]:
+        """serialize labels as RDF triples"""
+        logger = logging.getLogger("Entity.labels_rdf")
+        results = []
+        for labels in self._labels.values():
+            for label in labels:
+                results.append(
+                    (
+                        URIRef(self.id),
+                        NS_RDFS.label,
+                        Literal(label.value, lang=label.lang),
+                    )
+                )
+        return results

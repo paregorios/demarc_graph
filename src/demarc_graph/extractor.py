@@ -13,8 +13,10 @@ from .instances import Instance
 from lxml import etree
 from pathlib import Path
 from .rdf import NS_DEMARC
+from urllib.parse import urlsplit, urlunsplit
 
 XML_NAMESPACES = {"text": "urn:oasis:names:tc:opendocument:xmlns:text:1.0"}
+NS_DEMARC_PARTS = urlsplit(str(NS_DEMARC))
 
 
 class Extractor:
@@ -39,6 +41,7 @@ class Extractor:
         )
         instance_ids = set()
         instances = dict()
+
         for instance_head in instance_headings:
             bookmark_start = instance_head.find(
                 ".//text:bookmark-start", XML_NAMESPACES
@@ -51,10 +54,15 @@ class Extractor:
                 if instance_id.startswith("INST"):
                     num = instance_id[4:]  # Extract the number after "INST"
                     if num.isdigit():
-                        instance_id = "/instances/".join((NS_DEMARC, num))
+                        uripath = [p for p in NS_DEMARC_PARTS.path.split("/") if p]
+                        uripath.append(instance_id)
+                        uripath = "/".join(uripath)
+                        parts = list(NS_DEMARC_PARTS)
+                        parts[2] = uripath
+                        instance_uri = urlunsplit(parts)
                         if instance_id not in instance_ids:
                             instance_ids.add(instance_id)
-                            instance = Instance(instance_id)
+                            instance = Instance(instance_uri)
                             instances[instance_id] = instance
                         else:
                             raise RuntimeError(f"Instance ID collision")

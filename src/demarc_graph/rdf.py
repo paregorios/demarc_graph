@@ -16,5 +16,6 @@ from rdflib.namespace import (
     DCTERMS as NS_DCTERMS,
     FOAF as NS_FOAF,
 )
+from rdflib import Namespace
 
-NS_DEMARC = "https://paregorios.org/demarc/db"
+NS_DEMARC = Namespace("https://paregorios.org/demarc/")
