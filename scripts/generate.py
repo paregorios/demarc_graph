@@ -61,7 +61,7 @@ def main(**kwargs):
     g = Graph()
     for instance in instances.values():
         logger.debug(f"instance id {instance.id}")
-
+        g.add(instance.type_rdf)
         for label_triple in instance.labels_rdf:
             g.add(label_triple)
     g.bind("demarc", NS_DEMARC)

@@ -71,9 +71,12 @@ class Entity:
     Base class for various entities of interest
     """
 
-    def __init__(self, id: str):
+    def __init__(self, id: str, type: str):
         self._id = ""
         self.id = id
+        if not valid_uri(type):
+            raise ValueError(f"entity type must be an HTTPs URI, but '{type}' is not.")
+        self._type = type
         self._labels = dict()  # by language tag
 
     @property
@@ -134,3 +137,11 @@ class Entity:
                     )
                 )
         return results
+
+    @property
+    def type(self) -> str:
+        return self._type
+
+    @property
+    def type_rdf(self) -> Tuple[URIRef, URIRef, URIRef]:
+        return (URIRef(self.id), NS_RDF.type, URIRef(self.type))

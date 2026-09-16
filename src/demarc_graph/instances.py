@@ -10,9 +10,10 @@ Define instance-related entities
 """
 
 from .entities import Entity
+from .rdf import NS_DEMARC
 
 
 class Instance(Entity):
 
     def __init__(self, id: str):
-        Entity.__init__(self, id=id)
+        Entity.__init__(self, id=id, type=NS_DEMARC["DemarcationInstance"])
