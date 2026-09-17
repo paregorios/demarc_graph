@@ -10,8 +10,17 @@ Script to Generate RDF
 """
 
 from airtight.cli import configure_commandline
+from demarc_graph.bibliography import works_cited_graph
 from demarc_graph.extractor import Extractor
-from demarc_graph.rdf import NS_DEMARC
+from demarc_graph.rdf import (
+    NS_BIB,
+    NS_BIBO,
+    NS_CITO,
+    NS_DEMARC,
+    NS_DCTERMS,
+    NS_PRISM,
+    NS_ZOTERO,
+)
 import logging
 from pathlib import Path
 from rdflib import Graph
@@ -60,11 +69,13 @@ def main(**kwargs):
     e = Extractor(whence)
     instances = e.extract_instances()
     g = Graph()
+    g = g + works_cited_graph
     for instance in instances.values():
         logger.debug(f"instance id {instance.id}")
-        g.add(instance.type_rdf)
-        for label_triple in instance.labels_rdf:
-            g.add(label_triple)
+        for triple in instance.rdf:
+            g.add(triple)
+    g.bind("bibo", NS_BIBO)
+    g.bind("cito", NS_CITO)
     g.bind("demarc", NS_DEMARC)
     print(g.serialize(format="turtle"))
     sys.exit(EXIT_SUCCESS)  # if error, sys.exit(EXIT_ERROR)

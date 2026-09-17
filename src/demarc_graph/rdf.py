@@ -18,4 +18,9 @@ from rdflib.namespace import (
 )
 from rdflib import Namespace
 
+NS_BIB = Namespace("http://purl.org/net/biblio#")
+NS_BIBO = Namespace("http://purl.org/ontology/bibo/")
+NS_CITO = Namespace("http://purl.org/spar/cito/")
 NS_DEMARC = Namespace("https://paregorios.org/demarc/")
+NS_PRISM = Namespace("http://prismstandard.org/namespaces/basic/2.0/")
+NS_ZOTERO = Namespace("http://www.zotero.org/namespaces/export#")

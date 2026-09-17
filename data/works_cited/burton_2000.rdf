@@ -1,0 +1,31 @@
+<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+    xmlns:z="http://www.zotero.org/namespaces/export#"
+    xmlns:dcterms="http://purl.org/dc/terms/"
+    xmlns:bib="http://purl.org/net/biblio#"
+    xmlns:foaf="http://xmlns.com/foaf/0.1/"
+    xmlns:dc="http://purl.org/dc/elements/1.1/"
+    xmlns:prism="http://prismstandard.org/namespaces/1.2/basic/">
+    <bib:Article rdf:about="https://paregorios.org/demarc/work-burton-2000">
+        <z:itemType>journalArticle</z:itemType>
+        <dcterms:isPartOf rdf:resource="urn:issn:2510-5396"/>
+        <bib:authors>
+            <rdf:Seq>
+                <rdf:li>
+                    <foaf:Person>
+                        <foaf:surname>Burton</foaf:surname>
+                        <foaf:givenName>G.P.</foaf:givenName>
+                    </foaf:Person>
+                </rdf:li>
+            </rdf:Seq>
+        </bib:authors>
+        <dc:title>The Resolution of Territorial Disputes in the Provinces of the Roman Empire</dc:title>
+        <z:shortTitle>Burton 2000</z:shortTitle>
+        <dc:date>2000</dc:date>
+        <prism:volume>30</prism:volume>
+        <bib:pages>195-215</bib:pages>
+    </bib:Article>
+    <bib:Journal rdf:about="urn:issn:2510-5396">
+        <dc:title>Chiron</dc:title>
+        <dc:identifier>ISSN 2510-5396</dc:identifier>
+    </bib:Journal>
+</rdf:RDF>

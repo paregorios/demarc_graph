@@ -14,6 +14,7 @@ import logging
 from pprint import pformat
 from rdflib import URIRef, Literal, Graph
 from .rdf import *
+from .references import Reference
 from .text import norm
 from typing import List, Tuple
 from validators import url as valid_uri
@@ -78,6 +79,7 @@ class Entity:
             raise ValueError(f"entity type must be an HTTPs URI, but '{type}' is not.")
         self._type = type
         self._labels = dict()  # by language tag
+        self._references = list()  # references to external works
 
     @property
     def id(self) -> str:
@@ -137,6 +139,37 @@ class Entity:
                     )
                 )
         return results
+
+    @property
+    def rdf(self) -> List[Tuple[URIRef, URIRef, URIRef | Literal]]:
+        """returns a list of RDF triples for this entity"""
+        results = [self.type_rdf]
+        results.extend(self.labels_rdf)  # type: ignore
+        results.extend(self.references_rdf)  # type: ignore
+        return results  # type: ignore
+
+    @property
+    def references(self) -> List[Reference]:
+        """returns a list of references that cite this entity"""
+        return self._references
+
+    def add_reference(self, reference: Reference):
+        self._references.append(reference)
+
+    @property
+    def references_rdf(self) -> List[Tuple[URIRef, URIRef, URIRef | Literal]]:
+        reference_triples = []
+        for reference in self._references:
+            these_triples = reference.rdf()
+            if these_triples[0][0] is None:
+                # the reference doesn't know the ID of the entity it cites, so we add it here
+                these_triples[0] = (
+                    URIRef(self.id),
+                    these_triples[0][1],
+                    these_triples[0][2],
+                )
+            reference_triples.extend(these_triples)
+        return reference_triples
 
     @property
     def type(self) -> str:

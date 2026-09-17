@@ -9,10 +9,16 @@
 Extractor
 """
 
+from .bibliography import citation_reasons, works_cited_by_short_title
 from .instances import Instance
+import logging
 from lxml import etree
 from pathlib import Path
+from pprint import pprint
+import re
 from .rdf import NS_DEMARC
+from .references import Reference
+from .text import norm
 from urllib.parse import urlsplit, urlunsplit
 
 XML_NAMESPACES = {"text": "urn:oasis:names:tc:opendocument:xmlns:text:1.0"}
@@ -27,6 +33,12 @@ class Extractor:
     def __init__(self, whence: Path):
         self.source_path = whence
         self._load_xml()
+        # Burton 2000, no. 5
+        self.rx_burton_reference = re.compile(r"^Burton 2000, no. (?P<number>\d+)$")
+        # Date(s): 2 BC - AD 14
+        self.rx_date_range = re.compile(
+            r"^Date\(s\): (?P<start>(AD \d+|\d+ BC)) - (?P<end>(AD \d+|\d+ BC))$"
+        )
 
     def _load_xml(self):
         tree = etree.parse(self.source_path)
@@ -36,6 +48,7 @@ class Extractor:
         """
         Produce a dictionary of Instance objects extracted from the XML
         """
+        logger = logging.getLogger("Extractor.extract_instances")
         instance_headings = self.root.findall(
             ".//text:h[@text:style-name='treInstance']", XML_NAMESPACES
         )
@@ -95,6 +108,42 @@ class Extractor:
                         raise RuntimeError(
                             f"Failed to extract a label for instance {instance_id}"
                         )
+
+                    # subsequent paragraphs
+                    paragraphs = []
+                    next_node = instance_head.getnext()
+                    i = 0
+                    while next_node is not None:
+                        if next_node.tag == f"{{{XML_NAMESPACES['text']}}}p":
+                            paragraphs.append(next_node)
+                            raw_text = norm(" ".join(next_node.itertext()))
+                            m = self.rx_burton_reference.fullmatch(raw_text)
+                            if m:
+                                logger.debug(
+                                    f"Instance {instance_id} paragraph {i} matches Burton reference pattern"
+                                )
+                                ref_id = f"{instance_id}-REF{i+1}"
+                                ref = Reference(
+                                    id=NS_DEMARC[ref_id],
+                                    short_title="Burton 2000",
+                                    reason="citesAsRelated",
+                                    context={"locator": f"number {m.group('number')}"},
+                                )
+                                instance.add_reference(ref)
+                            else:
+                                m = self.rx_date_range.fullmatch(raw_text)
+                                if m:
+                                    logger.debug(
+                                        f"Instance {instance_id} paragraph {i} matches date range pattern"
+                                    )
+                                else:
+                                    logger.debug(
+                                        f"Instance {instance_id} paragraph {i} is general text: {' '.join(raw_text.split()[:10])}"
+                                    )
+                            i += 1
+                        else:
+                            break
+                        next_node = next_node.getnext()
 
             else:
                 raise RuntimeError(
