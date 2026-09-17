@@ -55,6 +55,7 @@ def main(**kwargs):
     # logger = logging.getLogger(sys._getframe().f_code.co_name)
     # code here
     # when all is done and goes well
+    logging.getLogger("normalize_space").setLevel(logging.WARNING)
     whence = Path(kwargs["input"]).expanduser().resolve()
     e = Extractor(whence)
     instances = e.extract_instances()
