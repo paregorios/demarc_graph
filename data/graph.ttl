@@ -1,0 +1,618 @@
+@prefix bib: <http://purl.org/net/biblio#> .
+@prefix bibo: <http://purl.org/ontology/bibo/> .
+@prefix cito: <http://purl.org/spar/cito/> .
+@prefix dc: <http://purl.org/dc/elements/1.1/> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix demarc: <https://paregorios.org/demarc/> .
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+@prefix prism: <http://prismstandard.org/namespaces/1.2/basic/> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix z: <http://www.zotero.org/namespaces/export#> .
+
+demarc:INST100 a demarc:DemarcationInstance ;
+    rdfs:label "Boundary Dispute Involving Ardea"@en .
+
+demarc:INST101 a demarc:DemarcationInstance ;
+    rdfs:label "Dispute over Site, Ownership and Boundaries between Ostia and Volussius Crocus"@en .
+
+demarc:INST103 a demarc:DemarcationInstance ;
+    rdfs:label "Restoration of the Boundaries of the Fields Consecrated to Diana Tifatina"@en .
+
+demarc:INST108 a demarc:DemarcationInstance ;
+    rdfs:label "Casting a Spell on the Governor in Hispania"@en ;
+    dcterms:references demarc:INST108-REF1 .
+
+demarc:INST109 a demarc:DemarcationInstance ;
+    rdfs:label "Authoritative Demarcation between the Viennenses and the Ceutrones"@en ;
+    dcterms:references demarc:INST109-REF1 .
+
+demarc:INST112 a demarc:DemarcationInstance ;
+    rdfs:label "Boundary Disputes between Thasos and Philippi?"@en .
+
+demarc:INST113 a demarc:DemarcationInstance ;
+    rdfs:label "Boundary Dispute Involving the Pastureland of the Phyle Rodopeis at Philippopolis"@en ;
+    dcterms:references demarc:INST113-REF1 .
+
+demarc:INST114 a demarc:DemarcationInstance ;
+    rdfs:label "Restoration of Boundary Established by King Philip between the Bragylai, Tiberioi and Kissynioi"@en ;
+    dcterms:references demarc:INST114-REF1 .
+
+demarc:INST115 a demarc:DemarcationInstance ;
+    rdfs:label "The Koinon of Thessaly Assists a Roman Proconsul"@en ;
+    dcterms:references demarc:INST115-REF1 .
+
+demarc:INST116 a demarc:DemarcationInstance ;
+    rdfs:label "Multiple Authoritative Demarcations Involving the Sacred Land of Artemis at Ephesus"@en .
+
+demarc:INST117 a demarc:DemarcationInstance ;
+    rdfs:label "Assignment of Fields, Pastures and Springs in North Africa"@en ;
+    dcterms:references demarc:INST117-REF1 .
+
+demarc:INST118 a demarc:DemarcationInstance ;
+    rdfs:label "Boundary Dispute between Doliche and Elimeia"@en ;
+    dcterms:references demarc:INST118-REF1 .
+
+demarc:INST119 a demarc:DemarcationInstance ;
+    rdfs:label "Possible Boundary Dispute between Valeria Faventina and the Compagani rivi Larensis"@en ;
+    dcterms:references demarc:INST119-REF1 .
+
+demarc:INST120 a demarc:DemarcationInstance ;
+    rdfs:label "Demarcations of a praefectura of Ucubis"@en .
+
+demarc:INST121 a demarc:DemarcationInstance ;
+    rdfs:label "Restoration and Renovation of Boundary Markers at Ostippo"@en .
+
+demarc:INST135 a demarc:DemarcationInstance ;
+    rdfs:label "Boundary Dispute between Delphi and Ambryssos"@en .
+
+demarc:INST137 a demarc:DemarcationInstance ;
+    rdfs:label "Dispute between Delphi and Thessalia over a harbor"@en .
+
+demarc:INST138 a demarc:DemarcationInstance ;
+    rdfs:label "Dispute about Site between Daulis and Memmios, son of Antiochos"@en .
+
+demarc:INST14 a demarc:DemarcationInstance ;
+    rdfs:label "An Official Demarcation of the Territorial Boundaries of Musti"@en .
+
+demarc:INST141 a demarc:DemarcationInstance ;
+    rdfs:label "Negotiated Settlement between Corinium and Ansium(?)"@en ;
+    dcterms:references demarc:INST141-REF1 .
+
+demarc:INST142 a demarc:DemarcationInstance ;
+    rdfs:label "Boundary Dispute between Asseria and Alveria"@en ;
+    dcterms:references demarc:INST142-REF1 .
+
+demarc:INST143 a demarc:DemarcationInstance ;
+    rdfs:label "An Altar to Hercules"@en ;
+    dcterms:references demarc:INST143-REF1 .
+
+demarc:INST144 a demarc:DemarcationInstance ;
+    rdfs:label "Boundary Dispute between Salvia and Stridon"@en .
+
+demarc:INST145 a demarc:DemarcationInstance ;
+    rdfs:label "Boundary Dispute between Ortopla and Parentium"@en .
+
+demarc:INST146 a demarc:DemarcationInstance ;
+    rdfs:label "Authoritative Demarcation between Asseria and Sidrona"@en .
+
+demarc:INST147 a demarc:DemarcationInstance ;
+    rdfs:label "Boundary Dispute between Vegium and Ortopla"@en ;
+    dcterms:references demarc:INST147-REF1 .
+
+demarc:INST148 a demarc:DemarcationInstance ;
+    rdfs:label "Boundary Dispute between the Barizaniates and the Lizaviates"@en .
+
+demarc:INST150 a demarc:DemarcationInstance ;
+    rdfs:label "Unpublished Marker from Dalmatia"@en .
+
+demarc:INST151 a demarc:DemarcationInstance ;
+    rdfs:label "Boundary Dispute between Nedinum and an Unknown Party"@en ;
+    dcterms:references demarc:INST151-REF1 .
+
+demarc:INST154 a demarc:DemarcationInstance ;
+    rdfs:label "Restoration of Boundaries between Nerate and Pituntium"@en ;
+    dcterms:references demarc:INST154-REF1 .
+
+demarc:INST155 a demarc:DemarcationInstance ;
+    rdfs:label "Verdict of P. Cornelius Dolabella"@en .
+
+demarc:INST156 a demarc:DemarcationInstance ;
+    rdfs:label "Restoration Following the Map of Dolabella"@en .
+
+demarc:INST157 a demarc:DemarcationInstance ;
+    rdfs:label "Q. Articuleius Regulus Adjudicates a Boundary Dispute in Lusitania"@en ;
+    dcterms:references demarc:INST157-REF1 .
+
+demarc:INST158 a demarc:DemarcationInstance ;
+    rdfs:label "Boundary Dispute Involving Cisimbrium"@en ;
+    dcterms:references demarc:INST158-REF1 .
+
+demarc:INST159 a demarc:DemarcationInstance ;
+    rdfs:label "Legate Appointed by Proconsul as iudex in a Boundary Dispute in Macedonia"@en ;
+    dcterms:references demarc:INST159-REF1 .
+
+demarc:INST16 a demarc:DemarcationInstance ;
+    rdfs:label "Verdicts of Avidius Nigrinus in Boundary Disputes Concerning Delphi and Neighboring Communities"@en .
+
+demarc:INST160 a demarc:DemarcationInstance ;
+    rdfs:label "Boundary Dispute Involving Two Villages of Heraclea"@en ;
+    dcterms:references demarc:INST160-REF1 .
+
+demarc:INST161 a demarc:DemarcationInstance ;
+    rdfs:label "An Authoritative Demarcation in Asia Brings Honor to the Severi"@en ;
+    dcterms:references demarc:INST161-REF1 .
+
+demarc:INST162 a demarc:DemarcationInstance ;
+    rdfs:label "Boundary Dispute between the Tiktaenoi and the Sporenoi"@en ;
+    dcterms:references demarc:INST162-REF1 .
+
+demarc:INST163 a demarc:DemarcationInstance ;
+    rdfs:label "A Proconsul Demarcates the City of Arykanda"@en ;
+    dcterms:references demarc:INST163-REF1 .
+
+demarc:INST165 a demarc:DemarcationInstance ;
+    rdfs:label "Boundary Dispute between Peraia and Philadelphia"@en ;
+    dcterms:references demarc:INST165-REF1 .
+
+demarc:INST166 a demarc:DemarcationInstance ;
+    rdfs:label "Boundary Dispute between Damascus and Sidon"@en ;
+    dcterms:references demarc:INST166-REF1 .
+
+demarc:INST168 a demarc:DemarcationInstance ;
+    rdfs:label "Authoritative Demarcation between Dorylaion and Another City"@en ;
+    dcterms:references demarc:INST168-REF1 .
+
+demarc:INST17 a demarc:DemarcationInstance ;
+    rdfs:label "Restoration of Boundaries or Boundary Markers between Corinium and Nedinum"@en .
+
+demarc:INST174 a demarc:DemarcationInstance ;
+    rdfs:label "Markers placed by a Freedman Procurator on an Imperial Estate in Phrygia"@en .
+
+demarc:INST175 a demarc:DemarcationInstance ;
+    rdfs:label "Demarcation between Public Land of Philippi and Private Landholders"@en .
+
+demarc:INST180 a demarc:DemarcationInstance ;
+    rdfs:label "Authoritative Demarcation on a North African Imperial Estate?INST180"@en .
+
+demarc:INST182 a demarc:DemarcationInstance ;
+    rdfs:label "Restoration of Land to Cretan Sanctuary of Aesculapius"@en .
+
+demarc:INST183 a demarc:DemarcationInstance ;
+    rdfs:label "Restoration of Roman Public Lands in Cyrenaica"@en .
+
+demarc:INST184 a demarc:DemarcationInstance ;
+    rdfs:label "Authoritative Demarcation of the Balari in Sardinia"@en .
+
+demarc:INST185 a demarc:DemarcationInstance ;
+    rdfs:label "Authoritative Demarcation of the Boundaries of the regio Palmyrena"@en .
+
+demarc:INST186 a demarc:DemarcationInstance ;
+    rdfs:label "Boundary Dispute Involving the Sal(tus) te(rritorii) Ta(rionae)"@en .
+
+demarc:INST21 a demarc:DemarcationInstance ;
+    rdfs:label "Horothesia of Histria"@en ;
+    dcterms:references demarc:INST21-REF1 .
+
+demarc:INST22 a demarc:DemarcationInstance ;
+    rdfs:label "Messia Pudentilla and the Vicani Buteridavenses"@en ;
+    dcterms:references demarc:INST22-REF1 .
+
+demarc:INST23 a demarc:DemarcationInstance ;
+    rdfs:label "Restoration of Public Places at Pompeii"@en .
+
+demarc:INST24 a demarc:DemarcationInstance ;
+    rdfs:label "Boundary Demarcation Between Sagalassos and Tymbrianassos"@en ;
+    dcterms:references demarc:INST24-REF1 .
+
+demarc:INST25 a demarc:DemarcationInstance ;
+    rdfs:label "Redemarcation of the Fossa Regia"@en ;
+    dcterms:references demarc:INST25-REF1 .
+
+demarc:INST26 a demarc:DemarcationInstance ;
+    rdfs:label "Boundary Demarcation between Madauros and Another Party"@en .
+
+demarc:INST29 a demarc:DemarcationInstance ;
+    rdfs:label "Possible Boundary Dispute between the Aunobari and Iulius Regillus"@en .
+
+demarc:INST36 a demarc:DemarcationInstance ;
+    rdfs:label "Boundary Markers Placed between the Igilgilitani and the Zimizes"@en ;
+    dcterms:references demarc:INST36-REF1 .
+
+demarc:INST39 a demarc:DemarcationInstance ;
+    rdfs:label "Re-establishment of Boundary Markers between the Suppenses and Vofricenses"@en ;
+    dcterms:references demarc:INST39-REF1 .
+
+demarc:INST4 a demarc:DemarcationInstance ;
+    rdfs:label "Demarcations between the Musulamii and their neighbors"@en .
+
+demarc:INST40 a demarc:DemarcationInstance ;
+    rdfs:label "Boundaries assigned to the Suburbures"@en ;
+    dcterms:references demarc:INST40-REF1 .
+
+demarc:INST43 a demarc:DemarcationInstance ;
+    rdfs:label "Fragmentary Verdict involving Thyateira"@en ;
+    dcterms:references demarc:INST43-REF1 .
+
+demarc:INST45 a demarc:DemarcationInstance ;
+    rdfs:label "Dispute in vicinity of Calama"@en ;
+    dcterms:references demarc:INST45-REF1 .
+
+demarc:INST46 a demarc:DemarcationInstance ;
+    rdfs:label "Possible Boundary Dispute between the Thabborenses and the Thimisuenses"@en .
+
+demarc:INST48 a demarc:DemarcationInstance ;
+    rdfs:label "Demarcation between a castellum and the ratio privataINST48"@en .
+
+demarc:INST50 a demarc:DemarcationInstance ;
+    rdfs:label "inter Regienses et saltum Cu[---]"@en ;
+    dcterms:references demarc:INST50-REF1 .
+
+demarc:INST51 a demarc:DemarcationInstance ;
+    rdfs:label "Restoration of Boundaries and Immunity of the Thudedenses by the Severi"@en .
+
+demarc:INST52 a demarc:DemarcationInstance ;
+    rdfs:label "Dispute between the Vanacini and the Mariani"@en ;
+    dcterms:references demarc:INST52-REF1 .
+
+demarc:INST53 a demarc:DemarcationInstance ;
+    rdfs:label "Dispute between the Falerienses and the Firmani concerning subseciva"@en .
+
+demarc:INST54 a demarc:DemarcationInstance ;
+    rdfs:label "Dispute between the Comenses and Bergalei"@en .
+
+demarc:INST55 a demarc:DemarcationInstance ;
+    rdfs:label "Dispute between the Lamienses and Hypataei"@en ;
+    dcterms:references demarc:INST55-REF1 .
+
+demarc:INST56 a demarc:DemarcationInstance ;
+    rdfs:label "Dispute between the Sacilienses, Eporenses and Solienses"@en ;
+    dcterms:references demarc:INST56-REF1 .
+
+demarc:INST57 a demarc:DemarcationInstance ;
+    rdfs:label "Boundary Dispute between Capua and Plotius Plebeius on Crete"@en .
+
+demarc:INST59 a demarc:DemarcationInstance ;
+    rdfs:label "Restoration of Public Lands of the Municipium Canusinum"@en .
+
+demarc:INST6 a demarc:DemarcationInstance ;
+    rdfs:label "Violent Boundary Dispute between Oea and Lepcis Magna"@en ;
+    dcterms:references demarc:INST6-REF1 .
+
+demarc:INST60 a demarc:DemarcationInstance ;
+    rdfs:label "Boundary Dispute between Nerate and Oneum"@en ;
+    dcterms:references demarc:INST60-REF1 .
+
+demarc:INST61 a demarc:DemarcationInstance ;
+    rdfs:label "Iudices dati in Dalmatia"@en ;
+    dcterms:references demarc:INST61-REF1 .
+
+demarc:INST62 a demarc:DemarcationInstance ;
+    rdfs:label "Dispute between the Patulcenses and Galillenses"@en .
+
+demarc:INST63 a demarc:DemarcationInstance ;
+    rdfs:label "Boundary dispute between the Sapuates and Aemate"@en ;
+    dcterms:references demarc:INST63-REF1 .
+
+demarc:INST64 a demarc:DemarcationInstance ;
+    rdfs:label "Boundary markers of the fields of the Bendiparoi"@en ;
+    dcterms:references demarc:INST64-REF1 .
+
+demarc:INST66 a demarc:DemarcationInstance ;
+    rdfs:label "Disputes Attested on an ‘Archive Wall’ from Coronea"@en ;
+    dcterms:references demarc:INST66-REF1 .
+
+demarc:INST69 a demarc:DemarcationInstance ;
+    rdfs:label "Dispute Over Lands Attributed to Zeus the Founder at Aizanoi"@en .
+
+demarc:INST72 a demarc:DemarcationInstance ;
+    rdfs:label "A Hadrianic Benefaction to Thracian Abdera"@en ;
+    dcterms:references demarc:INST72-REF1 .
+
+demarc:INST76 a demarc:DemarcationInstance ;
+    rdfs:label "Disputes Related to the Temple of Artemis Limnatis"@en .
+
+demarc:INST77 a demarc:DemarcationInstance ;
+    rdfs:label "Field boundaries assigned to the Kasturenses"@en .
+
+demarc:INST78 a demarc:DemarcationInstance ;
+    rdfs:label "Boundaries Assigned to the gens Numidarum"@en ;
+    dcterms:references demarc:INST78-REF1 .
+
+demarc:INST79 a demarc:DemarcationInstance ;
+    rdfs:label "Restoration of boundaries of the Regio Palmyrena"@en .
+
+demarc:INST8 a demarc:DemarcationInstance ;
+    rdfs:label "Restoration of Boundaries between the Nybgenii and the Tacapitani"@en .
+
+demarc:INST82 a demarc:DemarcationInstance ;
+    rdfs:label "Boundary Demarcation between Unnamed Parties in the Area of Capidava"@en ;
+    dcterms:references demarc:INST82-REF1 .
+
+demarc:INST83 a demarc:DemarcationInstance ;
+    rdfs:label "A Demarcation in Macedonia by D. Terentius Gentianus"@en ;
+    dcterms:references demarc:INST83-REF1 .
+
+demarc:INST84 a demarc:DemarcationInstance ;
+    rdfs:label "Boundaries Placed between Caesarea ad Libanum and the Gigarteni of the Vicus Sidoniorum"@en ;
+    dcterms:references demarc:INST84-REF1 .
+
+demarc:INST85 a demarc:DemarcationInstance ;
+    rdfs:label "Boundary markers of the territory of the Ausdecenses placed against the Dacians"@en ;
+    dcterms:references demarc:INST85-REF1 .
+
+demarc:INST86 a demarc:DemarcationInstance ;
+    rdfs:label "Boundary Dispute between Mopsouestia and Aegae"@en ;
+    dcterms:references demarc:INST86-REF1 .
+
+demarc:INST87 a demarc:DemarcationInstance ;
+    rdfs:label "Boundary Demarcations between Cirta and its Neighbors"@en .
+
+demarc:INST88 a demarc:DemarcationInstance ;
+    rdfs:label "Demarcation between the Public Lands of Philippi and a Private Individual"@en .
+
+demarc:INST89 a demarc:DemarcationInstance ;
+    rdfs:label "Demarcation Between the Moesi and Thraces"@en .
+
+demarc:INST9 a demarc:DemarcationInstance ;
+    rdfs:label "A Negotiated Boundary between the Zamucci and the Muduciuvi"@en ;
+    dcterms:references demarc:INST9-REF1 .
+
+demarc:INST90 a demarc:DemarcationInstance ;
+    rdfs:label "Procuratorial Demarcation of the agri B[l]aes(iani)"@en ;
+    dcterms:references demarc:INST90-REF1 .
+
+demarc:INST93 a demarc:DemarcationInstance ;
+    rdfs:label "Restoration of a Boundary Marker at Smilec"@en ;
+    dcterms:references demarc:INST93-REF1 .
+
+demarc:INST94 a demarc:DemarcationInstance ;
+    rdfs:label "Restoration of the praedia publica of Gortyn"@en .
+
+demarc:INST95 a demarc:DemarcationInstance ;
+    rdfs:label "Iudex datus in Dalmatia"@en ;
+    dcterms:references demarc:INST95-REF1 .
+
+demarc:INST97 a demarc:DemarcationInstance ;
+    rdfs:label "A Demarcation of the Thracian peraea of Thasos"@en .
+
+demarc:INST98 a demarc:DemarcationInstance ;
+    rdfs:label "Negotiated Settlement of a Boundary Dispute between Olooson and Dion"@en .
+
+demarc:INST99 a demarc:DemarcationInstance ;
+    rdfs:label "Boundary Dispute between Histonium and Tillius Sassius"@en .
+
+demarc:INST108-REF1 a demarc:Reference ;
+    bibo:locator "number 7" ;
+    cito:citesAsRelated demarc:work-burton-2000 .
+
+demarc:INST109-REF1 a demarc:Reference ;
+    bibo:locator "number 8" ;
+    cito:citesAsRelated demarc:work-burton-2000 .
+
+demarc:INST113-REF1 a demarc:Reference ;
+    bibo:locator "number 26" ;
+    cito:citesAsRelated demarc:work-burton-2000 .
+
+demarc:INST114-REF1 a demarc:Reference ;
+    bibo:locator "number 31" ;
+    cito:citesAsRelated demarc:work-burton-2000 .
+
+demarc:INST115-REF1 a demarc:Reference ;
+    bibo:locator "number 33" ;
+    cito:citesAsRelated demarc:work-burton-2000 .
+
+demarc:INST117-REF1 a demarc:Reference ;
+    bibo:locator "number 58" ;
+    cito:citesAsRelated demarc:work-burton-2000 .
+
+demarc:INST118-REF1 a demarc:Reference ;
+    bibo:locator "number 64" ;
+    cito:citesAsRelated demarc:work-burton-2000 .
+
+demarc:INST119-REF1 a demarc:Reference ;
+    bibo:locator "number 83" ;
+    cito:citesAsRelated demarc:work-burton-2000 .
+
+demarc:INST141-REF1 a demarc:Reference ;
+    bibo:locator "number 17" ;
+    cito:citesAsRelated demarc:work-burton-2000 .
+
+demarc:INST142-REF1 a demarc:Reference ;
+    bibo:locator "number 18" ;
+    cito:citesAsRelated demarc:work-burton-2000 .
+
+demarc:INST143-REF1 a demarc:Reference ;
+    bibo:locator "number 20" ;
+    cito:citesAsRelated demarc:work-burton-2000 .
+
+demarc:INST147-REF1 a demarc:Reference ;
+    bibo:locator "number 10" ;
+    cito:citesAsRelated demarc:work-burton-2000 .
+
+demarc:INST151-REF1 a demarc:Reference ;
+    bibo:locator "number 11" ;
+    cito:citesAsRelated demarc:work-burton-2000 .
+
+demarc:INST154-REF1 a demarc:Reference ;
+    bibo:locator "number 15" ;
+    cito:citesAsRelated demarc:work-burton-2000 .
+
+demarc:INST157-REF1 a demarc:Reference ;
+    bibo:locator "number 5" ;
+    cito:citesAsRelated demarc:work-burton-2000 .
+
+demarc:INST158-REF1 a demarc:Reference ;
+    bibo:locator "number 6" ;
+    cito:citesAsRelated demarc:work-burton-2000 .
+
+demarc:INST159-REF1 a demarc:Reference ;
+    bibo:locator "number 29" ;
+    cito:citesAsRelated demarc:work-burton-2000 .
+
+demarc:INST160-REF1 a demarc:Reference ;
+    bibo:locator "number 38" ;
+    cito:citesAsRelated demarc:work-burton-2000 .
+
+demarc:INST161-REF1 a demarc:Reference ;
+    bibo:locator "number 40" ;
+    cito:citesAsRelated demarc:work-burton-2000 .
+
+demarc:INST162-REF1 a demarc:Reference ;
+    bibo:locator "number 42" ;
+    cito:citesAsRelated demarc:work-burton-2000 .
+
+demarc:INST163-REF1 a demarc:Reference ;
+    bibo:locator "number 44" ;
+    cito:citesAsRelated demarc:work-burton-2000 .
+
+demarc:INST165-REF1 a demarc:Reference ;
+    bibo:locator "number 47" ;
+    cito:citesAsRelated demarc:work-burton-2000 .
+
+demarc:INST166-REF1 a demarc:Reference ;
+    bibo:locator "number 49" ;
+    cito:citesAsRelated demarc:work-burton-2000 .
+
+demarc:INST168-REF1 a demarc:Reference ;
+    bibo:locator "number 72" ;
+    cito:citesAsRelated demarc:work-burton-2000 .
+
+demarc:INST21-REF1 a demarc:Reference ;
+    bibo:locator "number 21" ;
+    cito:citesAsRelated demarc:work-burton-2000 .
+
+demarc:INST22-REF1 a demarc:Reference ;
+    bibo:locator "number 84" ;
+    cito:citesAsRelated demarc:work-burton-2000 .
+
+demarc:INST24-REF1 a demarc:Reference ;
+    bibo:locator "number 43" ;
+    cito:citesAsRelated demarc:work-burton-2000 .
+
+demarc:INST25-REF1 a demarc:Reference ;
+    bibo:locator "number 76" ;
+    cito:citesAsRelated demarc:work-burton-2000 .
+
+demarc:INST36-REF1 a demarc:Reference ;
+    bibo:locator "number 59" ;
+    cito:citesAsRelated demarc:work-burton-2000 .
+
+demarc:INST39-REF1 a demarc:Reference ;
+    bibo:locator "number 77" ;
+    cito:citesAsRelated demarc:work-burton-2000 .
+
+demarc:INST40-REF1 a demarc:Reference ;
+    bibo:locator "number 56" ;
+    cito:citesAsRelated demarc:work-burton-2000 .
+
+demarc:INST43-REF1 a demarc:Reference ;
+    bibo:locator "number 41" ;
+    cito:citesAsRelated demarc:work-burton-2000 .
+
+demarc:INST45-REF1 a demarc:Reference ;
+    bibo:locator "number 53" ;
+    cito:citesAsRelated demarc:work-burton-2000 .
+
+demarc:INST50-REF1 a demarc:Reference ;
+    bibo:locator "number 88" ;
+    cito:citesAsRelated demarc:work-burton-2000 .
+
+demarc:INST52-REF1 a demarc:Reference ;
+    bibo:locator "number 1" ;
+    cito:citesAsRelated demarc:work-burton-2000 .
+
+demarc:INST55-REF1 a demarc:Reference ;
+    bibo:locator "number 30" ;
+    cito:citesAsRelated demarc:work-burton-2000 .
+
+demarc:INST56-REF1 a demarc:Reference ;
+    bibo:locator "number 61" ;
+    cito:citesAsRelated demarc:work-burton-2000 .
+
+demarc:INST6-REF1 a demarc:Reference ;
+    bibo:locator "number 75" ;
+    cito:citesAsRelated demarc:work-burton-2000 .
+
+demarc:INST60-REF1 a demarc:Reference ;
+    bibo:locator "number 12" ;
+    cito:citesAsRelated demarc:work-burton-2000 .
+
+demarc:INST61-REF1 a demarc:Reference ;
+    bibo:locator "number 13" ;
+    cito:citesAsRelated demarc:work-burton-2000 .
+
+demarc:INST63-REF1 a demarc:Reference ;
+    bibo:locator "number 14" ;
+    cito:citesAsRelated demarc:work-burton-2000 .
+
+demarc:INST64-REF1 a demarc:Reference ;
+    bibo:locator "number 28" ;
+    cito:citesAsRelated demarc:work-burton-2000 .
+
+demarc:INST66-REF1 a demarc:Reference ;
+    bibo:locator "number 71" ;
+    cito:citesAsRelated demarc:work-burton-2000 .
+
+demarc:INST72-REF1 a demarc:Reference ;
+    bibo:locator "number 62" ;
+    cito:citesAsRelated demarc:work-burton-2000 .
+
+demarc:INST78-REF1 a demarc:Reference ;
+    bibo:locator "number 60" ;
+    cito:citesAsRelated demarc:work-burton-2000 .
+
+demarc:INST82-REF1 a demarc:Reference ;
+    bibo:locator "number 24" ;
+    cito:citesAsRelated demarc:work-burton-2000 .
+
+demarc:INST83-REF1 a demarc:Reference ;
+    bibo:locator "number 65" ;
+    cito:citesAsRelated demarc:work-burton-2000 .
+
+demarc:INST84-REF1 a demarc:Reference ;
+    bibo:locator "number 52" ;
+    cito:citesAsRelated demarc:work-burton-2000 .
+
+demarc:INST85-REF1 a demarc:Reference ;
+    bibo:locator "number 23" ;
+    cito:citesAsRelated demarc:work-burton-2000 .
+
+demarc:INST86-REF1 a demarc:Reference ;
+    bibo:locator "number 46" ;
+    cito:citesAsRelated demarc:work-burton-2000 .
+
+demarc:INST9-REF1 a demarc:Reference ;
+    bibo:locator "number 78" ;
+    cito:citesAsRelated demarc:work-burton-2000 .
+
+demarc:INST90-REF1 a demarc:Reference ;
+    bibo:locator "number 27" ;
+    cito:citesAsRelated demarc:work-burton-2000 .
+
+demarc:INST93-REF1 a demarc:Reference ;
+    bibo:locator "number 22" ;
+    cito:citesAsRelated demarc:work-burton-2000 .
+
+demarc:INST95-REF1 a demarc:Reference ;
+    bibo:locator "number 19" ;
+    cito:citesAsRelated demarc:work-burton-2000 .
+
+<urn:issn:2510-5396> a bib:Journal ;
+    dc:identifier "ISSN 2510-5396" ;
+    dc:title "Chiron" .
+
+demarc:work-burton-2000 a bib:Article ;
+    prism:volume "30" ;
+    dc:date "2000" ;
+    dc:title "The Resolution of Territorial Disputes in the Provinces of the Roman Empire" ;
+    dcterms:isPartOf <urn:issn:2510-5396> ;
+    bib:authors [ a rdf:Seq ;
+            rdf:_1 [ a foaf:Person ;
+                    foaf:givenName "G.P." ;
+                    foaf:surname "Burton" ] ] ;
+    bib:pages "195-215" ;
+    z:itemType "journalArticle" ;
+    z:shortTitle "Burton 2000" .
+
+

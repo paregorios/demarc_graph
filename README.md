@@ -4,11 +4,11 @@ FYI: notebooks in notebooks directory are not up-to-date; used as scratch/experi
 
 ## What it does
 
-As of 17 September 2026, the latest working code in the package does the following by parsing the original XML and constructing triples, which are then serialized to TTL using rdflib:
+As of 17 September 2026, the latest working code in the package does the following by parsing the original XML and constructing triples, which are then serialized to TTL using rdflib. The conversion process is marshalled by `script/generate.py > data/graph.ttl`. 
 
 ### Demarcation instances
 
-These are cases where we know there was some kind of formal demarcation of boundaries.
+"Demarcation Instances" are one of the key conceptual bundles: cases where we know there was some kind of formal demarcation of boundaries. IDs and labels for these are extracted from the original XML, taking advantage of styles and bookmarks that were defined in Word (`src/extractor.py`)
 
 ```turtle
 demarc:INST100 a demarc:DemarcationInstance ;
@@ -27,7 +27,7 @@ demarc:INST108 a demarc:DemarcationInstance ;
 
 ### References
 
-Note the addition of a reference on `INST108` in the preceding example. The only references currently being generated are those that relate `Instances` to numbered items discussed in Burton 2000. Additional triples are produced for each reference.
+Note the addition of a reference on `INST108` in the preceding example, which was also extracted from the XML paragraphs associated with the `Instance`. The only references currently being generated are those that relate `Instances` to numbered items discussed in a 2000 _Chiron_ article by Graham Burton. Additional triples are produced for each reference in order to capture the details:
 
 ```turtle
 demarc:INST108-ref-1 a demarc:Reference ;
@@ -37,7 +37,7 @@ demarc:INST108-ref-1 a demarc:Reference ;
 
 ### Works Cited
 
-Additional triples for each work cited in one or more references are also written, e.g.:
+Pre-constructed additional triples for each work cited in one or more references are read from `data/works_cited` and included in the graph:
 
 ```turtle
 <urn:issn:2510-5396> a bib:Journal ;
